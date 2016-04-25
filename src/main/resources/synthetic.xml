@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+    THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS
+    FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
+
+-->
+
+<synthetic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.xebialabs.com/deployit/synthetic"
+           xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd">
+
+<type type="wasx.WasProfileContainer" extends="generic.Container">
+	<property name="wasAppServerRoot"/>
+	<property name="host" kind="ci" referenced-type="overthere.Host" as-containment="true" />
+</type>
+
+<type type="wasx.WasProfile" extends="generic.ExecutedScript" virtual="true" deployable-type="wasx.WasProfileSpec" container-type="wasx.WasProfileContainer">
+ <generate-deployable type="wasx.WasProfileSpec" virtual="true" extends="generic.Resource"/>
+ <property name="templatePath" required="true"/>
+ <property name="profileName" required="false"/>
+ <property name="profileDir" category="Directory" required="false" default="${deployed.wasAppServerRoot}/profiles"/>
+ <property name="profilePath" category="Directory" required="false"/>
+ <property name="removeDirOnDelete" category="Directory" kind="boolean" default="false"/>
+ <property name="cellName" category="Topology" required="false"/>
+ <property name="nodeName" category="Topology" required="false"/>
+ <property name="appServerNodeName" category="Topology" required="false"/>
+ <property name="startProfile" category="Post-create" kind="boolean" required="false"/>
+ <property name="wasAppServerRoot" required="false"/>
+</type>
+
+<type type="wasx.DmgrProfile" extends="wasx.WasProfile" deployable-type="wasx.DmgrProfileSpec">
+ <generate-deployable type="wasx.DmgrProfileSpec" extends="wasx.WasProfileSpec"/>
+ <property name="createScript" hidden="true" default="wasx/profile/createDmgrProfile.sh.ftl"/>
+ <property name="createOrder" kind="integer" hidden="true" default="54"/>
+ <property name="destroyScript" hidden="true" default="wasx/profile/destroyDmgrProfile.sh.ftl"/>
+ <property name="destroyOrder" kind="integer" hidden="true" default="46"/>
+ <property name="nodeProfilePath" category="Directory" required="false"/>
+</type>
+
+<type type="wasx.AppSrvProfile" extends="wasx.WasProfile" deployable-type="wasx.AppSrvProfileSpec">
+ <generate-deployable type="wasx.AppSrvProfileSpec" extends="wasx.WasProfileSpec"/>
+ <property name="createScript" hidden="true" default="wasx/profile/createAppSrvProfile.sh.ftl"/>
+ <property name="createOrder" kind="integer" hidden="true" default="56"/>
+ <property name="destroyScript" hidden="true" default="wasx/profile/destroyAppSrvProfile.sh.ftl"/>
+ <property name="destroyOrder" kind="integer" hidden="true" default="44"/>
+ <property name="dmgrProfilePath" category="Directory" required="false"/>
+ <property name="portsFile" category="Ports" required="false"/>
+ <property name="nodePortsFile" category="Ports" required="false"/>
+ <property name="dmgrHost" category="Post-create" required="false"/>
+</type>
+
+</synthetic>
