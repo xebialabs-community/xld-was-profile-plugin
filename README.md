@@ -1,1 +1,65 @@
 # xld-was-profile-plugin
+This plugin will create and optionally start WAS profiles.  The start actions are startNode for a Application Server profile and startManager for a Deployment Manager profile
+##Objects##
+
+###wasx.WasProfileContainer###
+This is the container to which the WAS profiles will be deployed.
+####Properties####
+**WasAppServerRoot** = the WAS installation root, for example, /opt/IBM/WebShere/Appserver
+
+### wasx.AppSrvProfileSpec###
+Specification for a WAS Application Server profile.
+####Properties####
+**templatePath** = the location of the profile template, for example, ${deployed.wasAppServerRoot}/profileTemplates/cell/default
+
+**profileName** = the name to be assiged to the template (if not entered, the name of the object will be used)
+
+**wasAppServerRoot** = the WAS installation root
+
+**profileDir** = the directory into which to write the profile, for example, ${deployed.wasAppServerRoot}/profiles
+
+**profilePath** = the path to the profile, for example, ${deployed.profileDir}/AppSrv01
+
+**removeDirOnDelete** = boolean value to control whether a rmdir is executed after a profile is deleted
+
+**dmgrProfilePath** = the path to the deployment manager profile
+
+**portsFile** = the ports file, for example, ${deployed.profileDir}/Dmgr01/properties/portdef.props
+
+**nodePortsFile** = the node ports file, for example, ${deployed.profileDir}/Dmgr01/properties/nodeportdef.props
+
+**startProfile** = boolean value to control whether the new profile is started
+
+**dmgrHost** = the location of the deployment manager host for node federation
+
+**cellName** = the name of the cell
+
+**nodeName** = the name of the node on which dmgr is running
+
+**appServerNodeName** = the name of the appserver node
+
+###wasx.DmgrProfileSpec###
+Specification for a WAS Application Server profile.
+####Properties####
+**templatePath** = the location of the profile template, for example, ${deployed.wasAppServerRoot}/profileTemplates/cell/default
+
+**profileName** = the name to be assiged to the template (if not entered, the name of the object will be used)
+
+**wasAppServerRoot** = the WAS installation root
+
+**profileDir** = the directory into which to write the profile, for example, ${deployed.wasAppServerRoot}/profiles
+
+**profilePath** = the path to the profile, for example, ${deployed.profileDir}/AppSrv01
+
+**removeDirOnDelete** = boolean value to control whether a rmdir is executed after a profile is deleted
+
+**nodeProfilePath** = the path to the appserver profile
+
+**startProfile** = boolean value to control whether the new profile is started
+
+**cellName** = the name of the cell
+
+**nodeName** = the name of the node on which dmgr is running
+
+**appServerNodeName** = the name of the appserver node
+

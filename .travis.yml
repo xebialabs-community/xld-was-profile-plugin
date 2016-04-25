@@ -7,6 +7,6 @@ deploy:
   provider: releases
   api_key:
     secure: dAhveAL4ur4dSDojem60UUxAk/RGj1/8EekVElil7oYAnfmYt+e4xwcIhlVEEOwPLitpvMtv5hPFME69xFQWxAMaj3yoVLcF42Y2D3H/a85lUvrQXjJGEJH/5AbZXiz6WtlCVS6hfbTEa2z+Ff4fLCgc2GjjlJi6Lp3pp/E+FipzeMvadN+I9pTHd8aXCWUhWJQnz3z7bXc+Zv0HlA0OFuVgVRj6eYAtv5Yrs9ZTMlDE1VU6XcqduPj0VZXgU/CwtoCprEWPUzKcmBd3IiVS38WQo0d00QVPDYBsIlseW/ZkQxhfZcz4Qw91Dtc7IUf6MWmI2/hAhIcXdykxs9tukDdECqaZPHE1bQHJEsWSC0BJx39pCAfzrO1m+elR3HrBssw2ApioONs2mGGxGvuYtkYaaE6cD++t4DqMXEnNCCX/H5fIg3gdlaiLnS99EGk3PRYnUWr8bNUM4XQKyVC0L5MzZeD1uo2HHPN4wtPN/sA+rIw35Mk6NWh7qL+0gVaQM70ELfeS6DiCMYjVLZJHE74wbU/ZJdk8scHyr8qN7He5mZS/Evx2BytTgkX9/FXGWBbp/YVe6t8IhDJy0Q1kVKU98LX0Isog1Bet3+u9rjgTNREPN00J1Kdk2txcx30MJRBnB/XGKtmbRUca+y30dWAFPeDJ9uoxXnodvDYJxLE=
-  file: build/libs/xld-was-profile-plugin-1.0.4.jar
+  file: build/libs/xld-was-profile-plugin-1.0.5.jar
   on:
     repo: xebialabs-community/xld-was-profile-plugin
