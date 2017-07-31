@@ -1,15 +1,35 @@
-# xld-was-profile-plugin
+# XL Deploy WAS profile plugin
+
 This plugin will create and optionally start WAS profiles.  The start actions are startNode for a Application Server profile and startManager for a Deployment Manager profile
+
+## CI Status ##
+
+[![Build Status][xld-was-profile-plugin-travis-image]][xld-was-profile-plugin-travis-url]
+[![License: MIT][xld-was-profile-plugin-license-image]][xld-was-profile-plugin-license-url]
+![Github All Releases][xld-was-profile-plugin-downloads-image]
+
+[xld-was-profile-plugin-travis-image]: https://travis-ci.org/xebialabs-community/xld-was-profile-plugin.svg?branch=master
+[xld-was-profile-plugin-travis-url]: https://travis-ci.org/xebialabs-community/xld-was-profile-plugin
+[xld-was-profile-plugin-license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
+[xld-was-profile-plugin-license-url]: https://opensource.org/licenses/MIT
+[xld-was-profile-plugin-downloads-image]: https://img.shields.io/github/downloads/xebialabs-community/xld-was-profile-plugin/total.svg
+
+
 ##Objects##
 
 ###wasx.WasProfileContainer###
+
 This is the container to which the WAS profiles will be deployed.
+
 ####Properties####
+
 **WasAppServerRoot** = the WAS installation root, for example, /opt/IBM/WebShere/Appserver
 
 ### wasx.AppSrvProfileSpec###
 Specification for a WAS Application Server profile.
+
 ####Properties####
+
 **templatePath** = the location of the profile template, for example, ${deployed.wasAppServerRoot}/profileTemplates/cell/default
 
 **profileName** = the name to be assiged to the template (if not entered, the name of the object will be used)
@@ -39,8 +59,11 @@ Specification for a WAS Application Server profile.
 **appServerNodeName** = the name of the appserver node
 
 ###wasx.DmgrProfileSpec###
+
 Specification for a WAS Application Server profile.
+
 ####Properties####
+
 **templatePath** = the location of the profile template, for example, ${deployed.wasAppServerRoot}/profileTemplates/cell/default
 
 **profileName** = the name to be assiged to the template (if not entered, the name of the object will be used)
