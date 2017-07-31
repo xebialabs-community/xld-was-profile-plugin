@@ -15,24 +15,24 @@ This plugin will create and optionally start WAS profiles.  The start actions ar
 [xld-was-profile-plugin-downloads-image]: https://img.shields.io/github/downloads/xebialabs-community/xld-was-profile-plugin/total.svg
 
 
-##Objects##
+## Objects ##
 
-###wasx.WasProfileContainer###
+### wasx.WasProfileContainer ###
 
 This is the container to which the WAS profiles will be deployed.
 
-####Properties####
+#### Properties ####
 
 **WasAppServerRoot** = the WAS installation root, for example, /opt/IBM/WebShere/Appserver
 
-### wasx.AppSrvProfileSpec###
+### wasx.AppSrvProfileSpec ###
 Specification for a WAS Application Server profile.
 
-####Properties####
+#### Properties ####
 
 **templatePath** = the location of the profile template, for example, ${deployed.wasAppServerRoot}/profileTemplates/cell/default
 
-**profileName** = the name to be assiged to the template (if not entered, the name of the object will be used)
+**profileName** = the name to be assigned to the template (if not entered, the name of the object will be used)
 
 **wasAppServerRoot** = the WAS installation root
 
@@ -58,11 +58,11 @@ Specification for a WAS Application Server profile.
 
 **appServerNodeName** = the name of the appserver node
 
-###wasx.DmgrProfileSpec###
+### wasx.DmgrProfileSpec ###
 
 Specification for a WAS Application Server profile.
 
-####Properties####
+#### Properties ####
 
 **templatePath** = the location of the profile template, for example, ${deployed.wasAppServerRoot}/profileTemplates/cell/default
 
