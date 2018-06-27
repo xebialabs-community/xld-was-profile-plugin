@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright 2017 XEBIALABS
+    Copyright 2018 XEBIALABS
 
     Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -21,15 +21,15 @@
 
 <type type="wasx.WasProfile" extends="generic.ExecutedScript" virtual="true" deployable-type="wasx.WasProfileSpec" container-type="wasx.WasProfileContainer">
  <generate-deployable type="wasx.WasProfileSpec" virtual="true" extends="generic.Resource"/>
- <property name="templatePath" required="true"/>
- <property name="profileName" required="false"/>
- <property name="profileDir" category="Directory" required="false" default="${deployed.wasAppServerRoot}/profiles"/>
- <property name="profilePath" category="Directory" required="false"/>
- <property name="removeDirOnDelete" category="Directory" kind="boolean" default="false"/>
+ <property name="templatePath" category="Profile" required="true"/>
+ <property name="profileName" category="Profile" required="false"/>
+ <property name="profileDir" category="Profile" required="false" default="${deployed.wasAppServerRoot}/profiles"/>
+ <property name="profilePath" category="Profile" required="false"/>
+ <property name="removeDirOnDelete" category="Profile" kind="boolean" default="false"/>
  <property name="cellName" category="Topology" required="false"/>
  <property name="nodeName" category="Topology" required="false"/>
  <property name="appServerNodeName" category="Topology" required="false"/>
- <property name="startProfile" category="Post-create" kind="boolean" required="false"/>
+ <property name="startProfile" category="Profile" kind="boolean" required="false"/>
  <property name="wasAppServerRoot" required="false"/>
 </type>
 
@@ -39,7 +39,7 @@
  <property name="createOrder" kind="integer" hidden="true" default="54"/>
  <property name="destroyScript" hidden="true" default="wasx/profile/destroyDmgrProfile.sh.ftl"/>
  <property name="destroyOrder" kind="integer" hidden="true" default="46"/>
- <property name="nodeProfilePath" category="Directory" required="false"/>
+ <property name="nodeProfilePath" category="Node" required="false"/>
 </type>
 
 <type type="wasx.AppSrvProfile" extends="wasx.WasProfile" deployable-type="wasx.AppSrvProfileSpec">
@@ -48,10 +48,10 @@
  <property name="createOrder" kind="integer" hidden="true" default="56"/>
  <property name="destroyScript" hidden="true" default="wasx/profile/destroyAppSrvProfile.sh.ftl"/>
  <property name="destroyOrder" kind="integer" hidden="true" default="44"/>
- <property name="dmgrProfilePath" category="Directory" required="false"/>
- <property name="portsFile" category="Ports" required="false"/>
- <property name="nodePortsFile" category="Ports" required="false"/>
- <property name="dmgrHost" category="Post-create" required="false"/>
+ <property name="dmgrProfilePath" category="Deployment Manager" required="false"/>
+ <property name="portsFile" category="Deployment Manager" required="false"/>
+ <property name="nodePortsFile" category="Profile" required="false"/>
+ <property name="dmgrHost" category="Deployment Manager" required="false"/>
 </type>
 
 </synthetic>
