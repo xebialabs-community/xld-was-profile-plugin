@@ -1,6 +1,6 @@
 <#--
 
-    Copyright 2018 XEBIALABS
+    Copyright 2019 XEBIALABS
 
     Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -12,13 +12,15 @@
 
 <#macro DmgrProfileCreateOptions deployed=deployed>
   <#if deployed.templatePath??>-templatePath ${deployed.templatePath} </#if>
+  <#if deployed.additionalOptions??>${deployed.additionalOptions} </#if>
 </#macro>
 
 <#macro AppSrvProfileCreateOptions deployed=deployed>
   <#if deployed.templatePath??>-templatePath ${deployed.templatePath} </#if>
-  <#if deployed.dmgrTemplatePath??>-dmgrProfilePath ${deployed.dmgrProfilePath} </#if>
+  <#if deployed.dmgrProfilePath??>-dmgrProfilePath ${deployed.dmgrProfilePath} </#if>
   <#if deployed.portsFile??>-portsFile ${deployed.portsFile} </#if>
   <#if deployed.nodePortsFile??>-nodePortsFile ${deployed.nodePortsFile} </#if>
+  <#if deployed.additionalOptions??>${deployed.additionalOptions} </#if>
 </#macro>
 
 <#function lookupProfileName>
